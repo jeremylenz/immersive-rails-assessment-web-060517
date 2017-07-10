@@ -1,0 +1,8 @@
+<h2>Episode <%= @episode.number %> - <%= @episode.date %></h2>
+<h3>Guests:</h3>
+<% @episode.appearances.each do |appearance| %>
+<p><%= appearance.guest.name %> - <%= appearance.guest.occupation %> - Rating: <%= appearance.rating %></p>
+<% end %>
+<br>
+<p><%= link_to "Back to all episodes", episodes_path %></p>
+<p><%= link_to "Add new appearance", new_appearance_path %></p>
